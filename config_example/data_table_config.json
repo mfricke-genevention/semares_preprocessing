@@ -1,0 +1,38 @@
+{
+    "output": {
+        "file_name": "data.tsv",
+        "sep": "\t",
+        "quotechar": "",
+        "path": "./output/"
+    },
+    "input": {
+        "sep": "\t",
+        "quotechar": ""
+    },
+    "join": {
+        "columns": [
+            "Protein.IDs",
+            "IDs"
+        ],
+        "name": "Protein.IDs"
+    },
+    "name_mapping": true,
+    "columns": [
+        {
+            "maps": [
+                {
+                    "name": "map_1",
+                    "object_type": "sample",
+                    "field": [
+                        "name"
+                    ]
+                }
+            ],
+            "name": "{map_1}",
+            "input": [
+                "Abundance",
+                "Count"
+            ]
+        }
+    ]
+}

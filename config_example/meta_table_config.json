@@ -1,0 +1,52 @@
+{
+    "file_name": "metadata.tsv",
+    "sep": "\t",
+    "quotechar": "",
+    "output": "./output/",
+    "columns": [
+        {
+            "field": [
+                "name"
+            ],
+            "object_type": "sample",
+            "header_name": "Sample_name"
+        },
+        {
+            "field": [
+                "name"
+            ],
+            "object_type": "sample",
+            "header_name": "Column_name"
+        },        
+        {
+            "field": [
+                "identifier"
+            ],
+            "object_type": "individual",
+            "header_name": "ID"
+        },
+        {
+            "field": [
+                "timepoints",
+                "$TIMEPOINT",
+                "timepoint_termId"
+            ],
+            "object_type": "individual",
+            "header_name": "Timepoint"
+        },
+        {
+            "field": [
+                "strain"
+            ],
+            "object_type": "individual",
+            "header_name": "Condition"
+        },
+        {
+            "field": [
+                "sampling-site"
+            ],
+            "object_type": "sample",
+            "header_name": "Location"
+        }
+    ]
+}
