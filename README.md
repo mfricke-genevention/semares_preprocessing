@@ -1,2 +1,2 @@
 # semares_preprocessing
-scripts to prepare files for semares workflows
+scripts to prepare files for semares workflows!
