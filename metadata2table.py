@@ -62,7 +62,9 @@ def set_timepoint_index(field, item):
             timepoints = get(item, ["individual", "timepoints"])
             if timepoints is not None:
                 for i, timepoint_content in enumerate(timepoints):
-                    if timepoint_content.get("timepoint") == timepoint:
+                    if (timepoint_content.get("timepoint_code") == timepoint or
+                        timepoint_content.get("timepoint_name") == timepoint or
+                            timepoint_content.get("timepoint_termId") == timepoint):
                         field[field.index("$TIMEPOINT")] = i
                         timepoint_index = i
                         break
