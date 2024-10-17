@@ -70,11 +70,11 @@ def check_column_exists(columns, table):
         if column in table:
             result_column = column
             i += 1
-
+    tmp = ",".join(columns)
     if i == 0:
-        raise ValueError("Column not found!")
+        raise ValueError(f"Column not found! {tmp}")
     if i > 1:
-        raise ValueError("Column is not unique!")
+        raise ValueError(f"Column is not unique! {tmp}")
 
     return result_column
 
@@ -124,9 +124,14 @@ def read_csv_table(file, table_config):
 
 def write_csv_table(table, table_config):
     table_config_output = table_config.get("output")
+    dropna = table_config_output.get("dropna")
     quotechar = table_config_output.get("quotechar")
     quoting = get_quoting(quotechar)
     os.makedirs(table_config_output.get("path", "./"), exist_ok=True)
+
+    if dropna:
+        table.dropna(inplace=True)
+
     table.to_csv(
         table_config_output.get("path", "./") +
         table_config_output.get("file_name", "matrix.csv"),
@@ -172,7 +177,6 @@ def join_table(file_path, table_config, metadata):
             result_matrix = pd.merge(
                 result_matrix, table_selection,
                 on=join_column_name, how="outer")
-
     if result_matrix is not None:
         write_csv_table(result_matrix, table_config)
 

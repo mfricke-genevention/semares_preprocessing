@@ -97,11 +97,15 @@ def transform_metadata(table_config, metadata, file_pathes):
             metadata_map = {}
             for config in column_config:
                 field = config.get("field")
+                default = config.get("default")
                 object_type = config.get("object_type")
                 header_name = config.get("header_name")
                 key_list = [object_type] + field
                 set_timepoint_index(key_list, item)
                 value = get(item, key_list)
+                if value is None and default is not None:
+                    value = default
+
                 metadata_map[header_name] = value
             metadata_list.append(metadata_map)
     table = pd.DataFrame.from_records(metadata_list)
