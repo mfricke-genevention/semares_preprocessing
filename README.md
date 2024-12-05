@@ -10,6 +10,8 @@ This script can be used to join input data on a specific column and return a mat
 python join_table.py --metadata  ./examples/metadata_transcriptomics_adjusted.json --config  ./config/data_table_config.json --files ./examples/transcriptomics/Rat_25_day_0/gene_expression_0.csv ./examples/transcriptomics/Rat_24_day_0/gene_expression_0.csv ./examples/transcriptomics/Rat_23_day_0/gene_expression_0.csv
 ```
 
+> If you use this script with nextflow and docker, it is important to also set the `--path` parameter. This parameter is just a concatenated string (sep=`,`) of the `--file` input. Nextflow does not keep the original file path on mounting. Therefore we need the string metadata mapping.
+
 ![join several tables](./images/table_join.png)
 
 ### Configuration
