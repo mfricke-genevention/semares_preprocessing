@@ -45,7 +45,7 @@ def option_parser():
     parser.add_argument('--files', "-f",
                         help='files to join', dest="files", nargs='+')
     parser.add_argument('--pathes', "-p",
-                        help='original pathes', dest="pathes")
+                        help='original pathes', dest="pathes", default="")
     args = parser.parse_args()
 
     if len(sys.argv) < 2:
@@ -185,8 +185,11 @@ def main():
     args = option_parser()
     metadata = read_json_file(args.metadata)
     table_config = read_json_file(args.config)
-    pathes = args.pathes.split(",")
     files = args.files
+    if args.pathes:
+        pathes = args.pathes.split(",")
+    else:
+        pathes = files
     file_path = zip(files, pathes)
     join_table(file_path, table_config, metadata)
 

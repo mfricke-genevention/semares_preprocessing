@@ -1,29 +1,22 @@
 {
-    "file_name": "metadata.tsv",
-    "sep": "\t",
+    "file_name": "metadata.csv",
+    "sep": ",",
     "quotechar": "",
-    "output": "./output/",
+    "output": "./transformed_input/",
     "columns": [
         {
             "field": [
                 "name"
             ],
             "object_type": "sample",
-            "header_name": "Sample_name"
-        },
-        {
-            "field": [
-                "name"
-            ],
-            "object_type": "sample",
-            "header_name": "Column_name"
-        },        
+            "header_name": "sample"
+        },    
         {
             "field": [
                 "identifier"
             ],
             "object_type": "individual",
-            "header_name": "ID"
+            "header_name": "individual"
         },
         {
             "field": [
@@ -32,21 +25,28 @@
                 "timepoint_termId"
             ],
             "object_type": "individual",
-            "header_name": "Timepoint"
+            "header_name": "timepoint"
         },
         {
             "field": [
-                "strain"
+                "sex"
             ],
             "object_type": "individual",
-            "header_name": "Condition"
+            "header_name": "sex"
         },
         {
             "field": [
-                "sampling-site"
+                "diabetes-grade"
+            ],
+            "object_type": "individual",
+            "header_name": "diabetes-grade"
+        },
+        {
+            "field": [
+                "condition"
             ],
             "object_type": "sample",
-            "header_name": "Location"
+            "header_name": "condition"
         }
     ]
 }

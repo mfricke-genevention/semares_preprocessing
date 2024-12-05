@@ -13,7 +13,7 @@ def option_parser():
     parser.add_argument('--config', "-c",
                         help='table configuration file', dest="config")
     parser.add_argument('--pathes', "-p",
-                        help='original pathes', dest="pathes")
+                        help='original pathes to select meta data objects', dest="pathes")
     args = parser.parse_args()
 
     if len(sys.argv) < 2:

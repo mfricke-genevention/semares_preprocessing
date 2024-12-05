@@ -1,20 +1,20 @@
 {
     "output": {
-        "file_name": "data.tsv",
-        "sep": "\t",
+        "file_name": "data.csv",
+        "sep": ",",
         "quotechar": "",
-        "path": "./output/"
+        "path": "./transformed_input/"
     },
     "input": {
-        "sep": "\t",
+        "sep": ",",
         "quotechar": ""
     },
     "join": {
         "columns": [
-            "Protein.IDs",
-            "IDs"
+            "gene",
+            "protein"
         ],
-        "name": "Protein.IDs"
+        "name": "ID"
     },
     "name_mapping": true,
     "columns": [
@@ -26,12 +26,19 @@
                     "field": [
                         "name"
                     ]
+                },
+                {
+                    "name": "map_2",
+                    "object_type": "individual",
+                    "field": [
+                        "diabetes-grade"
+                    ]
                 }
             ],
-            "name": "{map_1}",
+            "name": "{map_1} ({map_2})",
             "input": [
-                "Abundance",
-                "Count"
+                "abundance",
+                "expression"
             ]
         }
     ]

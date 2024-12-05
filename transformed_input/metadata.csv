@@ -1,0 +1,4 @@
+sample,individual,timepoint,sex,diabetes-grade,condition
+Rat_25_day_0,Rat_25,0,male,severe diabetes,treated
+Rat_24_day_0,Rat_24,0,male,severe diabetes,control
+Rat_23_day_0,Rat_23,0,male,mild diabetes,treated
