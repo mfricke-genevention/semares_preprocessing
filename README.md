@@ -69,6 +69,11 @@ python metadata2table.py --metadata ./examples/metadata_transcriptomics_adjusted
 
 ![create table from json](./images/metadata_table.png)
 
+>If you want to have a real example of your data, you can download it at frontend - `Experiment->Download Annotations->JSON`
+
+![create table from json](./images/example_metadata.png)
+You can adjust the path of the example metadata.json using [set_example_path.py](./examples/set_example_path.py) 
+
 ### Configuration
 You can find a valid configuration file [here](./config/meta_table_config.json).
 
